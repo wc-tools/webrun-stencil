@@ -1,4 +1,4 @@
-import { test, expect } from '@wc-tools/webrun';
+import { test, expect } from 'webrun-testing';
 import { h } from '@stencil/core';
 
 test.describe('WcToggle Component', () => {

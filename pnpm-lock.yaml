@@ -17,15 +17,15 @@ importers:
       '@types/node':
         specifier: ^25.2.2
         version: 25.2.2
-      '@wc-tools/webrun':
-        specifier: file:/Users/teo/dev/projects/component-testing-runtime/wc-tools-webrun-1.0.0.tgz
-        version: file:../component-testing-runtime/wc-tools-webrun-1.0.0.tgz(@playwright/test@1.58.2)(@types/node@25.2.2)
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
+      webrun-testing:
+        specifier: ^1.0.1
+        version: 1.0.1(@playwright/test@1.58.2)(@types/node@25.2.2)
 
 packages:
 
@@ -105,12 +105,6 @@ packages:
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
-
-  '@wc-tools/webrun@file:../component-testing-runtime/wc-tools-webrun-1.0.0.tgz':
-    resolution: {integrity: sha512-Qys2N6vr5ikUvQsrMJEHkjtjhmdNIA1Uhy3m8+A9LEbkkDQasaoyE1uVxUz8IgD/FW86gwaw7iCIoJ8Xh9QuCA==, tarball: file:../component-testing-runtime/wc-tools-webrun-1.0.0.tgz}
-    version: 1.0.0
-    peerDependencies:
-      '@playwright/test': '>=1.40.0'
 
   ansi-styles@4.3.0:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
@@ -376,6 +370,11 @@ packages:
     resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
     engines: {node: '>= 8'}
 
+  webrun-testing@1.0.1:
+    resolution: {integrity: sha512-7dQZH5Cn5rF3Yg+kZjlDDR7lP4i4W1dERZk54wtBRqDSYMTzQBI6nLtKD0TAwy9OJWfot6OzEIIcYSerwsKUNA==}
+    peerDependencies:
+      '@playwright/test': '>=1.40.0'
+
   whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
     engines: {node: '>=12'}
@@ -458,15 +457,6 @@ snapshots:
       undici-types: 7.16.0
 
   '@types/trusted-types@2.0.7': {}
-
-  '@wc-tools/webrun@file:../component-testing-runtime/wc-tools-webrun-1.0.0.tgz(@playwright/test@1.58.2)(@types/node@25.2.2)':
-    dependencies:
-      '@lit-labs/ssr': 4.0.0(@types/node@25.2.2)
-      '@playwright/test': 1.58.2
-      '@stencil/core': 4.42.1
-      lit: 3.3.2
-    transitivePeerDependencies:
-      - '@types/node'
 
   ansi-styles@4.3.0:
     dependencies:
@@ -725,6 +715,15 @@ snapshots:
   url-join@4.0.1: {}
 
   web-streams-polyfill@3.3.3: {}
+
+  webrun-testing@1.0.1(@playwright/test@1.58.2)(@types/node@25.2.2):
+    dependencies:
+      '@lit-labs/ssr': 4.0.0(@types/node@25.2.2)
+      '@playwright/test': 1.58.2
+      '@stencil/core': 4.42.1
+      lit: 3.3.2
+    transitivePeerDependencies:
+      - '@types/node'
 
   whatwg-encoding@2.0.0:
     dependencies:

@@ -1,6 +1,6 @@
 # Webrun Stencil Component Testing Example
 
-This project demonstrates how to integrate [@wc-tools/webrun](https://github.com/your-org/webrun) with Stencil web components to create a comprehensive component testing setup with automatic Visual Regression Testing (VRT).
+This project demonstrates how to integrate [webrun](https://github.com/@web-tools/webrun) with Stencil web components to create a comprehensive component testing setup with automatic Visual Regression Testing (VRT).
 
 ## Overview
 
@@ -39,7 +39,7 @@ export default withComponentTesting({
 Playwright's accessible selectors (getByRole, getByText, etc.) automatically pierce shadow DOM, making tests more readable and maintainable:
 
 ```typescript
-import { test, expect } from '@wc-tools/webrun';
+import { test, expect } from 'webrun-testing';
 
 test('should render button', async ({ render }) => {
   const { container } = await render(<wc-button variant="primary">Click Me</wc-button>);
@@ -336,7 +336,7 @@ This approach provides zero-configuration VRT with screenshots automatically cap
 
 ## Resources
 
-- [@wc-tools/webrun Documentation](https://github.com/@web-tools/webrun)
+- [webrun-testing Documentation](https://github.com/@web-tools/webrun)
 - [Playwright Documentation](https://playwright.dev/)
 - [Stencil Documentation](https://stenciljs.com/)
 

@@ -1,4 +1,4 @@
-import { test, expect, spyOn } from '@wc-tools/webrun';
+import { test, expect, spyOn } from 'webrun-testing';
 import { h } from '@stencil/core';
 
 test.describe('WcInput Component', () => {

@@ -1,5 +1,5 @@
 import { defineConfig } from '@playwright/test';
-import { withComponentTesting } from '@wc-tools/webrun';
+import { withComponentTesting } from 'webrun-testing';
 
 export default withComponentTesting({
   port: 3333,

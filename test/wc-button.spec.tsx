@@ -1,5 +1,5 @@
 import { h } from '@stencil/core';
-import { test, expect } from '@wc-tools/webrun';
+import { test, expect } from 'webrun-testing';
 
 test.describe('WcButton Component', () => {
   test('should render a basic button', async ({ render }) => {

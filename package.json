@@ -1,0 +1,35 @@
+{
+  "name": "webrun-stencil",
+  "version": "1.0.0",
+  "description": "Stencil components tested with @wc-tools/webrun",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "playwright test --config=playwright-ct.config.ts",
+    "test:watch": "playwright test --config=playwright-ct.config.ts --ui"
+  },
+  "keywords": [
+    "stencil",
+    "web-components",
+    "testing"
+  ],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.23.0",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@stencil/core": "^4.42.1",
+    "@types/node": "^25.2.2",
+    "@wc-tools/webrun": "latest",
+    "http-server": "^14.1.1",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Webrun Stencil Components</title>
+    <script type="module" src="/build/webrun-stencil.esm.js"></script>
+    <script nomodule src="/build/webrun-stencil.js"></script>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        margin: 0;
+        padding: 2rem;
+        background: #f9fafb;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      h1 {
+        color: #111827;
+      }
+      .demo-section {
+        background: white;
+        padding: 2rem;
+        margin: 2rem 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .demo-section h2 {
+        margin-top: 0;
+        color: #374151;
+      }
+      .demo-grid {
+        display: grid;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Webrun Stencil Components</h1>
+
+      <div class="demo-section">
+        <h2>Button Component</h2>
+        <div class="demo-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <wc-button variant="primary">Primary Button</wc-button>
+          <wc-button variant="secondary">Secondary Button</wc-button>
+          <wc-button variant="danger">Danger Button</wc-button>
+          <wc-button variant="primary" disabled>Disabled Button</wc-button>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Input Component</h2>
+        <div class="demo-grid">
+          <wc-input label="Username" placeholder="Enter username" required></wc-input>
+          <wc-input label="Email" type="email" placeholder="Enter email"></wc-input>
+          <wc-input label="Password" type="password" placeholder="Enter password"></wc-input>
+          <wc-input label="Disabled Input" disabled value="Cannot edit"></wc-input>
+          <wc-input label="Error Input" error="This field is required"></wc-input>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Card Component</h2>
+        <div class="demo-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <wc-card heading="Card Title" subtitle="Card subtitle">
+            This is the card body content. You can put any content here.
+            <div slot="footer">
+              <wc-button variant="primary">Action</wc-button>
+            </div>
+          </wc-card>
+          <wc-card heading="Another Card">
+            Simple card without subtitle or footer.
+          </wc-card>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Toggle Component</h2>
+        <div class="demo-grid">
+          <wc-toggle label="Enable notifications"></wc-toggle>
+          <wc-toggle label="Dark mode" checked></wc-toggle>
+          <wc-toggle label="Disabled toggle" disabled></wc-toggle>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h2>Dropdown Component</h2>
+        <div class="demo-grid">
+          <wc-dropdown label="Select fruit" placeholder="Choose a fruit"></wc-dropdown>
+          <wc-dropdown label="Disabled dropdown" disabled></wc-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Setup dropdown options
+      const dropdowns = document.querySelectorAll('wc-dropdown');
+      const options = [
+        { label: 'Apple', value: 'apple' },
+        { label: 'Banana', value: 'banana' },
+        { label: 'Orange', value: 'orange' },
+        { label: 'Grape (disabled)', value: 'grape', disabled: true },
+      ];
+      dropdowns.forEach(dropdown => {
+        dropdown.options = options;
+      });
+
+      // Add event listeners
+      document.querySelectorAll('wc-button').forEach(button => {
+        button.addEventListener('wcClick', () => {
+          console.log('Button clicked!');
+        });
+      });
+
+      document.querySelectorAll('wc-toggle').forEach(toggle => {
+        toggle.addEventListener('wcToggle', (e) => {
+          console.log('Toggle changed:', e.detail);
+        });
+      });
+
+      document.querySelectorAll('wc-dropdown').forEach(dropdown => {
+        dropdown.addEventListener('wcSelect', (e) => {
+          console.log('Dropdown selected:', e.detail);
+        });
+      });
+    </script>
+  </body>
+</html>
